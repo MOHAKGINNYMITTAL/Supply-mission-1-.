@@ -1,5 +1,6 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground
+var redline1,redline2,redline3;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -31,7 +32,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0, isStatic:true});
 	World.add(world, packageBody);
 	
 
@@ -41,6 +42,10 @@ function setup() {
 
 
 	Engine.run(engine);
+	fill("red")
+	redline1=createSprite(400,670,90,10);
+	redline2=createSprite(350,630,10,90);
+	redline3=createSprite(450,630,10,90);
   
 }
 
